@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  background-color: purple;
+  border-radius: 50%;
+  position: relative;
+  animation-name: slide;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  /* animation-iteration-count: infinite; */
+  animation-delay: 2s;
+  /* animation-fill-mode: both; */
+}
+
+.circle:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    left: 50px;
+    top: 50px;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+.rectangle-animation {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  position: relative;
+  animation-name: rectangle-way;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+}
+
+.rectangle-animation:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rectangle-way {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  25% {
+    top: 0;
+    left: 400px;
+  }
+
+  50% {
+    top: 400px;
+    left: 400px;
+  }
+
+  75% {
+    top: 400px;
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* 
+.hidden-button {
+  position: relative;
+  top: 50px;
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  left: 0;
+}
+
+.hidden-button input {
+  display: none;
+}
+
+.hidden-button input:checked + span.circle {
+  animation-play-state: paused;
+} */
+
+.box {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-color: red;
+  margin-bottom: 30px;
+  left: 0;
+  transition-property: left;
+  transition-duration: 5s;
+  font-size: 40px;
+  color: white;
+}
+
+.box.linear {
+  transition-timing-function: linear;
+}
+
+.box.ease {
+  transition-timing-function: ease;
+}
+
+.box.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.box.ease-out {
+  transition-timing-function: ease-out;
+}
+
+.box.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.wrapper:hover .box {
+  left: 50%;
+}
+
+.transform-box {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: linear; */
+}
+
+.transform-box:hover {
+  transform: scale(5);
+  /* transform: translate(400px, 300px); */
+  /* transform-origin: left; */
+}
+
+.inner-span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
